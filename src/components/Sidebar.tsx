@@ -17,7 +17,7 @@ export function Sidebar() {
         <span>Software Engieneer</span>
       </div>
 
-      <footer className={styles.sidebar}>
+      <footer className={styles.footer}>
         <a href='#'>
           <PencilLine size={20}/>
           Editar seu perfil
