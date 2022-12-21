@@ -1,3 +1,4 @@
+import { Comment } from './Comment';
 import styles from './Post.module.css';
 
 interface IProps {
@@ -40,6 +41,11 @@ export function Post(props: IProps){
           <button type="submit">Publicar</button>
         </footer>        
       </form>
+      <div className={styles.commentList}>
+        <Comment />
+        <Comment />
+        <Comment />
+      </div>
     </article>
 
   )
