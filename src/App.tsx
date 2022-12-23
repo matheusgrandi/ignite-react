@@ -7,7 +7,37 @@ import { Sidebar } from './components/Sidebar'
 
 
 export function App() {
-  const [count, setCount] = useState(0)
+
+  const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: 'https://github.com/matheusgrandi.png',
+      name: 'Matheus Grandi',
+      role: 'Software Engineer @Allurion'
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeraa 👋'},
+      { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      { type: 'link', content: '👉 jane.design/doctorcare'},
+    ],
+    publishedAt: new Date('2022-12-22 20:00:00')
+  },
+  {
+    id: 2,
+    author: {
+      avatarUrl: 'https://github.com/maykbrito.png',
+      name: 'Mayk Brito',
+      role: 'Educator @ Rocketseat'
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeraa 👋'},
+      { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀'},
+      { type: 'link', content: '👉 jane.design/doctorcare'},
+    ],
+    publishedAt: new Date('2022-12-23 20:00:00')
+  },
+]
   
   return (
     <div>
@@ -16,18 +46,13 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>      
-          <Post
-             author="Matheus Grandi"
-             content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam consequatur corporis magnam nesciunt eius atque optio laboriosam nostrum repudiandae accusamus sed tempore error magni vitae veritatis quaerat, modi sint. Sapiente?"
-           />
-           <Post
-             author="Xuxa da Silva"
-             content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam consequatur corporis magnam nesciunt eius atque optio laboriosam nostrum repudiandae accusamus sed tempore error magni vitae veritatis quaerat, modi sint. Sapiente?"
-           />
+          {posts.map(post => {return <Post
+            author={post.author}
+            content={post.content}
+            publishedAt={post.publishedAt}
+          />})}
         </main>
-      </div>
-   
-
+      </div>   
    </div>
   )
 }
