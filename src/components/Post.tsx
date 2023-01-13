@@ -33,15 +33,19 @@ export function Post({ author, content, publishedAt}: IProps){
     addSuffix: true
   })
 
-  function handleNewCommentChange(){
-    setNewCommentText(event?.target.value);
+  function handleNewCommentChange(event: any){
+    setNewCommentText(event.target.value);
   }
 
-  function handleCreateNewComment(){
+  function handleCreateNewComment(event: any){
     event?.preventDefault()
 
     setComments([...comments, newCommentText])
     setNewCommentText('')
+  }
+
+  function deleteComment(comment: string) {
+
   }
 
 
@@ -84,9 +88,8 @@ export function Post({ author, content, publishedAt}: IProps){
       </form>
       <div className={styles.commentList}>
         {comments.map(comment => {
-          return <Comment key={comment} content={comment}/>
+          return <Comment key={comment} content={comment} deleteComment={deleteComment}/>
         })}
-
  
       </div>
     </article>

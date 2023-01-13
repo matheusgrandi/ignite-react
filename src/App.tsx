@@ -31,8 +31,8 @@ export function App() {
       role: 'Educator @ Rocketseat'
     },
     content: [
-      { type: 'paragraph', content: 'Fala galere'},
-      { type: 'paragraph', content: 'Mamaco!'},
+      { type: 'paragraph', content: 'Fala galera'},
+      { type: 'paragraph', content: ':)'},
       { type: 'link', content: '👉 jane.design/doctorcare'},
     ],
     publishedAt: new Date('2022-12-23 20:00:00')

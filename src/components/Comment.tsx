@@ -4,6 +4,11 @@ import styles from './Comment.module.css'
 
 interface IProps {
   content: string
+  deleteComment: Function
+}
+
+function handleDeleteComment() {
+  
 }
 
 export function Comment({ content }: IProps) {
@@ -19,7 +24,7 @@ export function Comment({ content }: IProps) {
               <time title ='16 de dezembro de 2022 às 16:47' dateTime='2022-12-16 16:47:00'>Cerca de 1h atrás</time>
             </div>
 
-            <button title='Deletar comentário'>
+            <button title='Deletar comentário' onClick={handleDeleteComment}>
               <Trash size={24} />
             </button>
 
