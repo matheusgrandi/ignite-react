@@ -44,8 +44,11 @@ export function Post({ author, content, publishedAt}: IProps){
     setNewCommentText('')
   }
 
-  function deleteComment(comment: string) {
-
+  function deleteComment(commentToDelete: string) {
+    const commentsWithoutDeletedOne = comments.filter(comment => {
+      return comment !== commentToDelete;
+    })
+    setComments(commentsWithoutDeletedOne);
   }
 
 
@@ -88,7 +91,7 @@ export function Post({ author, content, publishedAt}: IProps){
       </form>
       <div className={styles.commentList}>
         {comments.map(comment => {
-          return <Comment key={comment} content={comment} deleteComment={deleteComment}/>
+          return <Comment key={comment} content={comment} onDeleteComment={deleteComment}/>
         })}
  
       </div>

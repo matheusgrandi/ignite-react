@@ -4,14 +4,18 @@ import styles from './Comment.module.css'
 
 interface IProps {
   content: string
-  deleteComment: Function
+  onDeleteComment: Function
 }
 
-function handleDeleteComment() {
-  
-}
 
-export function Comment({ content }: IProps) {
+
+export function Comment({ content, onDeleteComment }: IProps) {
+
+  function handleDeleteComment() {
+  console.log('deletar')
+
+  onDeleteComment(content)
+}
   return (
     <div className={styles.comment}>
       <Avatar src='https://github.com/diego3g.png' />
